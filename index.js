@@ -1,17 +1,24 @@
 // Import packages
 import express from "express";
-import home from "./routes/home.js";
-import dotenv from 'dotenv';
+import interviews from "./routes/interviews.js";
+import dotenv from "dotenv";
+import cors from "cors";
 
-dotenv.config()
+dotenv.config();
+const app = express();
 
 // Middlewares
-const app = express();
+app.use(
+  cors({
+    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+  })
+);
+
 app.use(express.json());
 
 // Routes
-app.use("/api", home);
+app.use("/api/interviews", interviews);
 
 // connection
-const port = process.env.PORT || 9001;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening to port ${port}`));
