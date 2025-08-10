@@ -12,7 +12,7 @@ const router = express.Router();
 // GET /routes/interviews - fetch all interviews
 router.get("/", async (req, res) => {
   const { data, error } = await  supabase.from('interviews').select('*').order("id", {ascending: true});
-  if (error) return res.json(400).json({error : error.message})
+  if (error) return res.status(400).json({error : error.message})
   res.status(200).json({data: data})
 
 });
