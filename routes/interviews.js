@@ -3,7 +3,7 @@ import pool from "../db.js";
 
 const router = express.Router();
 
-// GET /api/interviews - fetch all interviews
+// GET /routes/interviews - fetch all interviews
 router.get("/", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM interviews");

@@ -4,9 +4,6 @@
   "description": "MockHire is a real-time AI voice interview simulator built with React and Node.js. It lets users practice interviews with an AI agent, receive instant feedback, and improve their communication skills—making it a smart prep tool for job seekers and students.",
   "main": "index.js",
   "type": "module",
-  "engines": {
-    "node": "22.x"
-  },
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,9 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vapi-ai/server-sdk": "^0.10.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "pdf-parse": "^1.1.1",
     "pg": "^8.16.3"
   },
   "devDependencies": {
